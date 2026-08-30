@@ -6,53 +6,137 @@
     <title>কোর্সসমূহ - AR Job Zone</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Hind Siliguri', sans-serif; } </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style> 
+        body { font-family: 'Hind Siliguri', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100">
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header -->
+    <!-- Header Navigation -->
     <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <span class="bg-indigo-600 text-white font-bold p-2.5 rounded-xl text-xl">AR</span>
-                <span class="text-xl font-bold">AR Job Zone</span>
+                <img src="logo.png" alt="AR Job Zone Logo" class="h-12 w-auto object-contain rounded-xl shadow-lg border border-slate-700">
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent block">AR Job Zone</span>
+                    <span class="text-[10px] text-indigo-400 tracking-wider font-semibold uppercase block -mt-1">Coaching Center</span>
+                </div>
             </div>
+
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="index.html" class="hover:text-indigo-400 transition">হোম</a>
-                <a href="courses.html" class="text-indigo-400 font-semibold">কোর্স ও এক্সাম</a>
-                <a href="about.html" class="hover:text-indigo-400 transition">আমাদের সম্পর্কে</a>
+                <a href="index.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-house text-xs"></i> হোম</a>
+                <a href="courses.html" class="text-indigo-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
+                <a href="exam.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-pen-to-square text-xs"></i> অনলাইন এক্সাম</a>
+                <a href="register.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-user-plus text-xs"></i> রেজিস্ট্রেশন</a>
             </div>
-            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white text-sm px-5 py-2.5 rounded-xl">ফেসবুক গ্রুপ</a>
+            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
+            </a>
         </div>
     </nav>
 
-    <!-- Courses Grid -->
-    <section class="pt-36 pb-20 px-4 max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">আমাদের বিশেষ ব্যাচসমূহ</h2>
+    <!-- Header Section -->
+    <section class="pt-32 pb-8 px-4 max-w-7xl mx-auto text-center">
+        <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 inline-block mb-3">
+            🎓 প্রফেশনাল অনলাইন ও অফলাইন ব্যাচসমূহ
+        </span>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-slate-100 mb-4">
+            আমাদের চলমান <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">বিশেষ কোর্সসমূহ</span>
+        </h1>
+        <p class="text-slate-400 text-sm md:text-base max-w-2xl mx-auto">
+            আপনার লক্ষ্য অনুযায়ী কাঙ্ক্ষিত কোর্স সিলেক্ট করে এখনই এনরোল সম্পন্ন করুন এবং নিজেকে একধাপ এগিয়ে রাখুন।
+        </p>
+    </section>
+
+    <!-- Courses Grid Section -->
+    <section class="pb-20 px-4 max-w-7xl mx-auto w-full">
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                <span class="text-xs bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full">BCS Specail</span>
-                <h3 class="text-2xl font-bold mt-4 mb-2">BCS Preliminary Course</h3>
-                <p class="text-slate-400 text-sm mb-6">সম্পূর্ণ সিলেবাস কভার করতে নিয়মিত লাইভ ক্লাস ও মডেল টেস্ট।</p>
-                <a href="#" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-xl">বিস্তারিত দেখুন</a>
+            
+            <!-- Card 1: BCS Preliminary -->
+            <div class="glass-card p-6 rounded-3xl hover:border-indigo-500/50 transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-semibold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-full">BCS Special</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-indigo-400 mr-1"></i> ৪ মাস মেয়াদী</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-100 group-hover:text-indigo-400 transition mb-3">BCS Preliminary Course</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        সম্পূর্ণ সিলেবাস কভার করতে নিয়মিত লাইভ ও অফলাইন ক্লাস, টপিকভিত্তিক লেকচার শিট এবং সাপ্তাহিক মডেল টেস্ট।
+                    </p>
+                    
+                    <ul class="text-xs text-slate-300 space-y-2.5 mb-8 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ১০০+ বিষয়ভিত্তিক ক্লাস</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> বিষয়ভিত্তিক পিডিএফ লেকচার শিট</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> সাপ্তাহিক ও সাবজেক্ট ওয়াইজ এক্সাম</li>
+                    </ul>
+                </div>
+                
+                <a href="register.html" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-plus text-xs"></i> এনরোল করুন
+                </a>
             </div>
-            <!-- Card 2 -->
-            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                <span class="text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full">Bank Job</span>
-                <h3 class="text-2xl font-bold mt-4 mb-2">Bank Officer Master Course</h3>
-                <p class="text-slate-400 text-sm mb-6">ম্যাথ ও ইংলিশের ওপর স্পেশাল ফোকাসড প্রস্তুতি।</p>
-                <a href="#" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-xl">বিস্তারিত দেখুন</a>
+
+            <!-- Card 2: Bank Officer Master -->
+            <div class="glass-card p-6 rounded-3xl hover:border-emerald-500/50 transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full">Bank Job</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-emerald-400 mr-1"></i> ৩ মাস মেয়াদী</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-100 group-hover:text-emerald-400 transition mb-3">Bank Officer Master Course</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        ম্যাথ ও ইংলিশের ওপর স্পেশাল ফোকাসড প্রস্তুতি। শর্টকাট টেকনিক ও প্রিভিয়াস ইয়ার প্রশ্ন সমাধানের বিশেষ ব্যবস্থা।
+                    </p>
+                    
+                    <ul class="text-xs text-slate-300 space-y-2.5 mb-8 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ম্যাথ ও ইংলিশ স্পেশাল কেয়ার</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> সাম্প্রতিক সাধারণ জ্ঞান আপডেট</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> রিয়েলটাইম মডেল টেস্ট</li>
+                    </ul>
+                </div>
+
+                <a href="register.html" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-plus text-xs"></i> এনরোল করুন
+                </a>
             </div>
-            <!-- Card 3 -->
-            <div class="bg-slate-800/60 p-6 rounded-2xl border border-slate-700">
-                <span class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full">Primary & NTRCA</span>
-                <h3 class="text-2xl font-bold mt-4 mb-2">Primary Teacher Exam Prep</h3>
-                <p class="text-slate-400 text-sm mb-6">কম সময়ে চূড়ান্ত ও কার্যকর প্রস্তুতির জন্য উপযোগী ব্যাচ।</p>
-                <a href="#" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-2.5 rounded-xl">বিস্তারিত দেখুন</a>
+
+            <!-- Card 3: Primary & NTRCA -->
+            <div class="glass-card p-6 rounded-3xl hover:border-cyan-500/50 transition duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-semibold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-3 py-1 rounded-full">Primary & NTRCA</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-cyan-400 mr-1"></i> ২.৫ মাস মেয়াদী</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-100 group-hover:text-cyan-400 transition mb-3">Primary Teacher Exam Prep</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        কম সময়ে প্রাথমিক শিক্ষক নিয়োগ ও এনটিআরসিএ পরীক্ষার জন্য শতভাগ কার্যকর এবং টু-দ্য-পয়েন্ট প্রস্তুতি ব্যাচ।
+                    </p>
+
+                    <ul class="text-xs text-slate-300 space-y-2.5 mb-8 border-t border-slate-800 pt-4">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> সিলেবাসভিত্তিক টপিক আলোচনা</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> স্পেশাল রিভিশন ক্লাস</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ওএমআর সিটভিত্তিক পরীক্ষা</li>
+                    </ul>
+                </div>
+
+                <a href="register.html" class="block text-center bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 rounded-xl transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-plus text-xs"></i> এনরোল করুন
+                </a>
             </div>
+
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
+        <p>© 2026 AR Job Zone. All Rights Reserved. | 📍 কলেজপাড়া, তারাগঞ্জ, রংপুর</p>
+    </footer>
 
 </body>
 </html>
