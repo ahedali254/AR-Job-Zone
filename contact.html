@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>যোগাযোগ ও এআই গাইড - AR Job Zone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style> 
+        body { font-family: 'Hind Siliguri', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur fixed top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="AR Job Zone Logo" class="h-12 w-auto object-contain rounded-xl shadow-lg border border-slate-700">
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent block">AR Job Zone</span>
+                    <span class="text-[10px] text-indigo-400 tracking-wider font-semibold uppercase block -mt-1">Coaching Center</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="index.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-house text-xs"></i> হোম</a>
+                <a href="courses.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
+                <a href="exam.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-pen-to-square text-xs"></i> অনলাইন এক্সাম</a>
+                <a href="register.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-user-plus text-xs"></i> রেজিস্ট্রেশন</a>
+                <a href="about.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-address-card text-xs"></i> আমাদের সম্পর্কে</a>
+                <a href="contact.html" class="text-indigo-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-headset text-xs"></i> যোগাযোগ ও AI হেল্প</a>
+            </div>
+            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content Area -->
+    <div class="pt-28 pb-10 px-4 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-100">আমাদের সাথে <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">যোগাযোগ ও AI গাইড</span></h1>
+            <p class="text-slate-400 text-sm md:text-base mt-3">কোচিংয়ের যেকোনো তথ্য জানতে অথবা আপনার যেকোনো প্রশ্নের উত্তর ও দিকনির্দেশনা সরাসরি AI অ্যাসিস্ট্যান্টের কাছ থেকে নিন।</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Left Info Panel -->
+            <div class="lg:col-span-5 space-y-6">
+                <!-- Phone Info -->
+                <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-xl flex items-center justify-center text-xl shrink-0 border border-indigo-500/20">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-slate-100">হটলাইন ও ফোন</h3>
+                        <p class="text-slate-300 text-sm mt-1">০১৭৩৭-৬৯০৬৪১</p>
+                        <p class="text-slate-300 text-sm">০১৫১৮-৮০৮০২৩</p>
+                    </div>
+                </div>
+
+                <!-- Location Info -->
+                <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
+                    <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl shrink-0 border border-cyan-500/20">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-slate-100">আমাদের ঠিকানা</h3>
+                        <p class="text-slate-300 text-sm mt-1">কলেজপাড়া, তারাগঞ্জ, রংপুর</p>
+                    </div>
+                </div>
+
+                <!-- AI Feature Box -->
+                <div class="glass-card p-6 rounded-2xl border-purple-500/30 bg-purple-950/20 flex items-start gap-4">
+                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center text-xl shrink-0 border border-purple-500/30">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-slate-100 flex items-center gap-2">
+                            ২৪/৭ স্মার্ট এআই মেন্টর
+                            <span class="bg-emerald-500/20 text-emerald-400 text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30">অনলাইন</span>
+                        </h3>
+                        <p class="text-slate-300 text-sm mt-1">বিসিএস, প্রাইমারি, ব্যাংক, গণিত বা ইংরেজির যেকোনো প্রশ্ন লিখে পাঠান, এআই সাথে সাথে উত্তর ও গাইডলাইন দেবে।</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Interactive Assistant / Chatbot -->
+            <div class="lg:col-span-7">
+                <div class="glass-card rounded-3xl border border-slate-800 flex flex-col h-[520px] shadow-2xl">
+                    <!-- Chat Header -->
+                    <div class="p-4 border-b border-slate-800 bg-slate-900/80 rounded-t-3xl flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white text-lg shadow-lg">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-100 text-sm">AR Job Zone AI Assistant</h3>
+                                <p class="text-[11px] text-emerald-400 flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> পড়াশোনা ও দিকনির্দেশনায় সক্রিয়
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Box Body -->
+                    <div id="chatBox" class="p-4 space-y-4 overflow-y-auto flex-1 text-sm chat-scroll">
+                        <!-- System Welcome Message -->
+                        <div class="flex items-start gap-2.5">
+                            <div class="w-8 h-8 bg-indigo-600/30 text-indigo-400 rounded-full flex items-center justify-center text-xs shrink-0 border border-indigo-500/30">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div class="bg-slate-900 border border-slate-800 text-slate-200 p-3.5 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed">
+                                আসসালামু আলাইকুম! 👋 আমি AR Job Zone-এর AI শিক্ষাগুরু। বিসিএস, প্রাইমারি, ব্যাংক, গণিত বা ভর্তি সংক্রান্ত যেকোনো প্রশ্ন আমাকে করতে পারেন। আপনি কী জানতে চান?
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="p-3 border-t border-slate-800 bg-slate-900/90 rounded-b-3xl">
+                        <form id="aiForm" onsubmit="handleChat(event)" class="flex gap-2">
+                            <input type="text" id="userInput" placeholder="এখানে আপনার প্রশ্ন বা বিষয়টি লিখুন..." required class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
+                            <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 rounded-xl font-semibold transition flex items-center justify-center shadow-lg shadow-indigo-600/30">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500 mt-12">
+        <p>© 2026 AR Job Zone. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Interactive AI Assistant Script -->
+    <script>
+        function handleChat(e) {
+            e.preventDefault();
+            const input = document.getElementById('userInput');
+            const chatBox = document.getElementById('chatBox');
+            const query = input.value.trim();
+
+            if (!query) return;
+
+            // Render User Message
+            chatBox.innerHTML += `
+                <div class="flex items-start gap-2.5 justify-end">
+                    <div class="bg-indigo-600 text-white p-3.5 rounded-2xl rounded-tr-none max-w-[85%] leading-relaxed">
+                        ${escapeHtml(query)}
+                    </div>
+                </div>
+            `;
+
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Render Loading Animation
+            const loadingId = 'loading-' + Date.now();
+            chatBox.innerHTML += `
+                <div id="${loadingId}" class="flex items-start gap-2.5">
+                    <div class="w-8 h-8 bg-indigo-600/30 text-indigo-400 rounded-full flex items-center justify-center text-xs shrink-0 border border-indigo-500/30">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 text-slate-400 p-3.5 rounded-2xl rounded-tl-none text-xs flex items-center gap-2">
+                        <i class="fa-solid fa-circle-notch fa-spin text-indigo-400"></i> উত্তর তৈরি করা হচ্ছে...
+                    </div>
+                </div>
+            `;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Simulate Smart AI Response Logic
+            setTimeout(() => {
+                document.getElementById(loadingId).remove();
+                const reply = generateAIResponse(query);
+                
+                chatBox.innerHTML += `
+                    <div class="flex items-start gap-2.5">
+                        <div class="w-8 h-8 bg-indigo-600/30 text-indigo-400 rounded-full flex items-center justify-center text-xs shrink-0 border border-indigo-500/30">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-slate-900 border border-slate-800 text-slate-200 p-3.5 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed space-y-2">
+                            ${reply}
+                        </div>
+                    </div>
+                `;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000);
+        }
+
+        // Smart Knowledge Base Engine
+        function generateAIResponse(text) {
+            const q = text.toLowerCase();
+
+            if (q.includes('প্রাইমারি') || q.includes('প্রাথমিক')) {
+                return `<b>প্রাইমারি শিক্ষক নিয়োগ প্রস্তুতি দিকনির্দেশনা:</b><br>
+                ১. বাংলা, ইংরেজি, গণিত ও সাধারণ জ্ঞান—এই ৪টি বিষয়ে ২০ নম্বর করে মোট ৮০ নম্বরের পরীক্ষা হয়।<br>
+                ২. গণিতে ভালো করতে বিগত বছরের প্রশ্ন সমাধানের পাশাপাশি ৯ম-১০ম শ্রেণির গণিত চর্চা করুন।<br>
+                ৩. আমাদের AR Job Zone-এ প্রাইমারি স্পেশাল ব্যাচে ভর্তি হতে "রেজিস্ট্রেশন" অপশন থেকে আবেদন করুন।`;
+            } 
+            else if (q.includes('বিসিএস') || q.includes('bcs')) {
+                return `<b>বিসিএস প্রিলি প্রস্তুতি গাইডলাইন:</b><br>
+                ১. সিলেবাস ধরে বিষয়ভিত্তিক প্রস্তুতি শুরু করুন। বিশেষ করে বাংলা সাহিত্য, গণিত, ইংরেজি গ্রামার এবং আন্তর্জাতিক বিষয়ে গুরুত্ব দিন।<br>
+                ২. প্রতিদিন নিয়মিত পত্রিকা পড়ুন এবং মডেল টেস্ট দিন।<br>
+                ৩. আমাদের কোচিং সেন্টারে বিসিএস স্পেশাল প্রিলি ও রিটেন ব্যাচে ভর্তি হতে কল করুন: <b>০১৭৩৭-৬৯০৬৪১</b>`;
+            }
+            else if (q.includes('গণিত') || q.includes('অঙ্ক') || q.includes('math')) {
+                return `<b>গণিত শেখার সহজ কৌশল:</b><br>
+                ১. প্রতিদিন অন্তত ১-২ ঘণ্টা শর্টকাট টেকনিক ও বেসিক নিয়মে অনুশীলন করুন।<br>
+                ২. পার্টিগণিত, বীজগণিত ও জ্যামিতির বেসিক সূত্রগুলো মুখস্থ না করে বুঝে আয়ত্ত করুন।<br>
+                ৩. আমাদের স্পেশাল ম্যাথ ব্যাচের লাইভ ক্লাসে অংশ নিতে রেজিস্টার করুন।`;
+            }
+            else if (q.includes('ইংরেজি') || q.includes('english')) {
+                return `<b>ইংরেজি প্রস্তুতি গাইডলাইন:</b><br>
+                ১. Grammar Parts of Speech, Tense, Voice, Right forms of verbs ভালোভাবে আয়ত্ত করুন।<br>
+                ২. প্রতিদিন ৫টি করে নতুন Vocabulary মনে রাখার চেষ্টা করুন।`;
+            }
+            else if (q.includes('ভর্তি') || q.includes('ফি') || q.includes('রেজিস্ট্রেশন')) {
+                return `<b>ভর্তি প্রক্রিয়া:</b><br>
+                আমাদের যেকোনো ব্যাচে ভর্তি হতে উপরে থাকা <b>"রেজিস্ট্রেশন"</b> ট্যাবে ক্লিক করে ফর্ম পূরণ করুন অথবা সরাসরি কথা বলতে ফোন করুন: <b>০১৭৩৭-৬৯০৬৪১</b>`;
+            }
+            else if (q.includes('ঠিকানা') || q.includes('কোথায়') || q.includes('লোকেশন')) {
+                return `<b>আমাদের ঠিকানা:</b><br>
+                কলেজপাড়া, তারাগঞ্জ, রংপুর। অনলাইন এবং অফলাইন উভয় মাধ্যমে ক্লাস নেওয়ার সুব্যবস্থা রয়েছে।`;
+            }
+            else {
+                return `আপনার প্রশ্নটির জন্য ধন্যবাদ! চাকরির প্রস্তুতিতে নিয়মিত পড়াশোনার বিকল্প নেই। সুনির্দিষ্ট বিষয়ভিত্তিক গাইডলাইন ও নতুন ব্যাচে ভর্তির জন্য ফোন করুন: <b>০১৭৩৭-৬৯০৬৪১</b> অথবা <b>০১৫১৮-৮০৮০২৩</b>।`;
+            }
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+    </script>
+</body>
+</html>
