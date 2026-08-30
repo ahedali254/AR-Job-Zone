@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- jsPDF & html2canvas for PDF Generation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style> 
@@ -21,7 +20,6 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
-    <!-- Header Navigation -->
     <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
@@ -32,7 +30,6 @@
                 </div>
             </div>
 
-            <!-- Nav Menu -->
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                 <a href="index.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-house text-xs"></i> হোম</a>
                 <a href="courses.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
@@ -46,7 +43,6 @@
         </div>
     </nav>
 
-    <!-- Registration Section -->
     <section class="pt-32 pb-16 px-4 max-w-3xl mx-auto w-full">
         <div class="glass-card p-6 md:p-10 rounded-3xl shadow-2xl border border-indigo-500/20">
             <div class="text-center mb-8">
@@ -54,12 +50,11 @@
                     📝 অনলাইন ভর্তি সেশন - ২০২৬
                 </span>
                 <h2 class="text-3xl font-extrabold text-slate-100">নতুন ব্যাচে ভর্তি ফর্ম</h2>
-                <p class="text-slate-400 text-xs md:text-sm mt-2">সঠিক তথ্য দিয়ে নিচের ফর্মটি পূরণ করুন ও ভর্তি রসিদ (PDF) ডাউনলোড করুন।</p>
+                <p class="text-slate-400 text-xs md:text-sm mt-2">সঠিক তথ্য দিয়ে নিচের ফর্মটি পূরণ করুন ও ভর্তি রসিদ (PDF) ডাউনলোড করুন।</p>
             </div>
 
             <form id="student-form" class="space-y-6">
                 
-                <!-- Personal Info -->
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-medium text-slate-300 mb-2">আপনার পুরো নাম *</label>
@@ -71,7 +66,6 @@
                     </div>
                 </div>
 
-                <!-- Course & Photo -->
                 <div class="grid md:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-medium text-slate-300 mb-2">কাঙ্ক্ষিত কোর্স সিলেক্ট করুন *</label>
@@ -80,7 +74,7 @@
                             <option value="Bank Officer Master Course">Bank Officer Master Course</option>
                             <option value="Primary & NTRCA Special">Primary & NTRCA Special</option>
                             <option value="Samaj Seba Adhidoptor (DSS)">সমাজসেবা অধিদপ্তর (DSS)</option>
-                            <option value="9th-20th Grade Ministry Batch">মন্ত্রণালয় ও অধিদপ্তর (৯ম-২০তম)</option>
+                            <option value="9th-20th Grade Ministry Batch">মন্ত্রণালয় ও অধিদপ্তর (৯ম-২০তম)</option>
                             <option value="Police SI & Sergeant Batch">পুলিশ সাব-ইন্সপেক্টর ও সার্জেন্ট</option>
                         </select>
                     </div>
@@ -90,7 +84,6 @@
                     </div>
                 </div>
 
-                <!-- Payment Instructions -->
                 <div class="bg-slate-900/80 p-5 rounded-2xl border border-indigo-500/30 space-y-3">
                     <h3 class="text-sm font-bold text-indigo-400 flex items-center gap-2">
                         <i class="fa-solid fa-wallet"></i> ফি প্রদান পদ্ধতি (bKash / Nagad / Rocket)
@@ -111,7 +104,6 @@
                     </div>
                 </div>
 
-                <!-- Payment Details Input -->
                 <div class="grid md:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-xs font-medium text-slate-300 mb-2">পেমেন্ট মেথড *</label>
@@ -122,7 +114,7 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-slate-300 mb-2">যে নম্বর থেকে টাকা পাঠিয়েছেন *</label>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">যে নম্বর থেকে টাকা পাঠিয়েছেন *</label>
                         <input type="tel" id="payNumber" required placeholder="017xxxxxxxx" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
                     </div>
                     <div>
@@ -140,13 +132,12 @@
         </div>
     </section>
 
-    <!-- Hidden Printable Slip Container -->
-    <div id="pdf-slip-wrapper" class="hidden">
-        <div id="pdf-slip" style="width: 550px; padding: 30px; background: #ffffff; color: #0f172a; font-family: 'Hind Siliguri', sans-serif; border: 2px solid #6366f1; border-radius: 12px; margin: 0 auto;">
+    <div id="pdf-slip-wrapper" style="position: absolute; left: -9999px; top: -9999px;">
+        <div id="pdf-slip" style="width: 550px; padding: 30px; background: #ffffff; color: #0f172a; font-family: 'Hind Siliguri', sans-serif; border: 2px solid #6366f1; border-radius: 12px;">
             <div style="text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 20px;">
                 <h2 style="color: #4338ca; font-size: 26px; font-weight: 800; margin: 0;">AR Job Zone Coaching Center</h2>
                 <p style="font-size: 12px; color: #64748b; margin: 3px 0 0 0;">কলেজপাড়া, তারাগঞ্জ, রংপুর | মোবাইল: 01700000000</p>
-                <span style="display: inline-block; background: #e0e7ff; color: #3730a3; font-size: 11px; font-weight: 700; padding: 3px 12px; rounded: 20px; margin-top: 8px;">ভর্তি স্লিপ ও আইডি নম্বর</span>
+                <span style="display: inline-block; background: #e0e7ff; color: #3730a3; font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 20px; margin-top: 8px;">ভর্তি স্লিপ ও আইডি নম্বর</span>
             </div>
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -181,12 +172,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
         <p>© 2026 AR Job Zone. All Rights Reserved. | 📍 কলেজপাড়া, তারাগঞ্জ, রংপুর</p>
     </footer>
 
-    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script>
@@ -202,24 +191,26 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
-        // Image Compress Function (Client Side)
+        // Optimized Image Compression Logic
         function compressImage(file) {
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.readAsDataURL(file);
+                reader.onerror = error => reject(error);
                 reader.onload = (event) => {
                     const img = new Image();
                     img.src = event.target.result;
+                    img.onerror = error => reject(error);
                     img.onload = () => {
                         const canvas = document.createElement('canvas');
-                        const MAX_WIDTH = 300;
+                        const MAX_WIDTH = 200; // Light size for fast DB save
                         const scaleFactor = MAX_WIDTH / img.width;
                         canvas.width = MAX_WIDTH;
                         canvas.height = img.height * scaleFactor;
                         
                         const ctx = canvas.getContext('2d');
                         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                        resolve(canvas.toDataURL('image/jpeg', 0.7)); // Compressed JPEG
+                        resolve(canvas.toDataURL('image/jpeg', 0.6));
                     };
                 };
             });
@@ -232,17 +223,22 @@
             
             submitBtn.disabled = true;
             submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> তথ্য জমা ও স্লিপ প্রসেসিং হচ্ছে...`;
+            formStatus.innerText = "";
 
             try {
                 // Generate Auto Roll / Student ID
                 const randomNum = Math.floor(1000 + Math.random() * 9000);
                 const rollNo = `AR-2026-${randomNum}`;
 
-                // Process Photo Compression if uploaded
+                // Compress Image
                 let photoData = null;
                 const photoFile = document.getElementById('photo').files[0];
                 if (photoFile) {
-                    photoData = await compressImage(photoFile);
+                    try {
+                        photoData = await compressImage(photoFile);
+                    } catch (err) {
+                        console.warn("Photo compression failed, proceeding without photo:", err);
+                    }
                 }
 
                 const studentData = {
@@ -250,7 +246,7 @@
                     name: document.getElementById('name').value,
                     phone: document.getElementById('phone').value,
                     course: document.getElementById('course').value,
-                    photo: photoData,
+                    photo: photoData, // Base64 Compressed string
                     payMethod: document.getElementById('payMethod').value,
                     payNumber: document.getElementById('payNumber').value,
                     trxId: document.getElementById('trxId').value,
@@ -258,10 +254,10 @@
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 };
 
-                // Save to Firestore
+                // Save Data to Firestore with Timeout
                 await db.collection('students').add(studentData);
 
-                // Populate PDF Slip
+                // Populate PDF Slip Text
                 document.getElementById('slip-id').innerText = rollNo;
                 document.getElementById('slip-name').innerText = studentData.name;
                 document.getElementById('slip-phone').innerText = studentData.phone;
@@ -271,40 +267,48 @@
                 document.getElementById('slip-trx').innerText = studentData.trxId;
                 document.getElementById('slip-date').innerText = new Date().toLocaleDateString('bn-BD');
 
+                const slipImg = document.getElementById('slip-img');
+                const placeholder = document.getElementById('slip-img-placeholder');
+
                 if (photoData) {
-                    const slipImg = document.getElementById('slip-img');
                     slipImg.src = photoData;
                     slipImg.style.display = 'block';
-                    document.getElementById('slip-img-placeholder').style.display = 'none';
+                    placeholder.style.display = 'none';
+                } else {
+                    slipImg.style.display = 'none';
+                    placeholder.style.display = 'block';
                 }
 
-                // Generate PDF Download
+                // Render PDF with html2canvas
                 const slipElement = document.getElementById('pdf-slip');
-                const wrapper = document.getElementById('pdf-slip-wrapper');
-                wrapper.classList.remove('hidden');
+                
+                // Small delay to ensure image loads in DOM
+                await new Promise(resolve => setTimeout(resolve, 300));
 
-                const canvas = await html2canvas(slipElement, { scale: 2 });
+                const canvas = await html2canvas(slipElement, { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: false
+                });
+                
                 const imgData = canvas.toDataURL('image/png');
                 const { jsPDF } = window.jspdf;
                 const pdf = new jsPDF('p', 'mm', 'a5');
-                const imgProps = pdf.getImageProperties(imgData);
                 const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
                 
-                pdf.addImage(imgData, 'PNG', 0, 10, pdfWidth, pdfHeight);
+                pdf.addImage(imgData, 'PNG', 0, 5, pdfWidth, pdfHeight);
                 pdf.save(`AR_Job_Zone_${rollNo}.pdf`);
-                
-                wrapper.classList.add('hidden');
 
                 formStatus.className = "mt-4 text-center text-sm font-medium text-emerald-400";
-                formStatus.innerHTML = `✅ অভিনন্দন ${studentData.name}! আপনার ভর্তি ফর্মটি সফলভাবে জমা হয়েছে। <br>🆔 আপনার অটো রোল নম্বর: <strong>${rollNo}</strong> (স্লিপ ডাউনলোড করা হয়েছে)`;
+                formStatus.innerHTML = `✅ অভিনন্দন ${studentData.name}! আপনার ভর্তি ফর্মটি সফলভাবে জমা হয়েছে। <br>🆔 আপনার অটো রোল নম্বর: <strong>${rollNo}</strong> (স্লিপ ডাউনলোড করা হয়েছে)`;
                 
                 document.getElementById('student-form').reset();
 
             } catch (error) {
-                console.error(error);
+                console.error("Submission Error:", error);
                 formStatus.className = "mt-4 text-center text-sm font-medium text-red-400";
-                formStatus.innerText = "❌ কোনো সমস্যা হয়েছে, দয়া করে আবার চেষ্টা করুন।";
+                formStatus.innerText = "❌ জমা দিতে সমস্যা হয়েছে! ডাটাবেজ কানেকশন বা তথ্য পুনরায় চেক করুন।";
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> ভর্তি ফর্ম সাবমিট ও স্লিপ ডাউনলোড করুন`;
