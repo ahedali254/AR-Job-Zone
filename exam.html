@@ -3,69 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>অনলাইন এক্সাম জোন - AR Job Zone</title>
+    <title>অনলাইন মডেল টেস্ট - AR Job Zone</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Hind Siliguri', sans-serif; } </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style> 
+        body { font-family: 'Hind Siliguri', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans min-h-screen">
+<body class="bg-slate-950 text-slate-100 font-sans">
 
-    <!-- Header Navigation -->
     <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="logo.png" alt="AR Job Zone Logo" class="h-12 w-auto object-contain rounded-lg">
-                <span class="text-xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">AR Job Zone</span>
-            </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="index.html" class="hover:text-indigo-400 transition">হোম</a>
-                <a href="courses.html" class="hover:text-indigo-400 transition">কোর্সসমূহ</a>
-                <a href="exam.html" class="text-indigo-400 font-semibold">অনলাইন এক্সাম</a>
-                <a href="register.html" class="hover:text-indigo-400 transition">রেজিস্ট্রেশন</a>
-            </div>
-            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition">
-                ফেসবুক গ্রুপ
-            </a>
-        </div>
-    </nav>
-
-    <!-- Quiz Section -->
-    <section class="pt-32 pb-16 px-4 max-w-4xl mx-auto">
-        <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-3xl shadow-xl">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-indigo-400">📝 ডেইলি মডেল টেস্ট & কুইজ</h2>
-                <span class="text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/30">ফ্রি মডেল টেস্ট</span>
-            </div>
-            
-            <div class="space-y-6">
-                <div class="bg-slate-900/60 p-5 rounded-2xl border border-slate-700/50">
-                    <p class="text-lg font-medium text-slate-200 mb-4">প্রশ্ন ১: 'দারিদ্র্য' কবিতাটি কাজী নজরুল ইসলামের কোন কাব্যের অন্তর্ভুক্ত?</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <button onclick="checkAnswer(this, false)" class="p-3 bg-slate-800 hover:bg-slate-700 text-left rounded-xl transition border border-slate-600">ক) অগ্নিবীণা</button>
-                        <button onclick="checkAnswer(this, true)" class="p-3 bg-slate-800 hover:bg-slate-700 text-left rounded-xl transition border border-slate-600">খ) সিন্ধু-হিন্দোল</button>
-                        <button onclick="checkAnswer(this, false)" class="p-3 bg-slate-800 hover:bg-slate-700 text-left rounded-xl transition border border-slate-600">গ) বিষের বাঁশী</button>
-                        <button onclick="checkAnswer(this, false)" class="p-3 bg-slate-800 hover:bg-slate-700 text-left rounded-xl transition border border-slate-600">ঘ) চক্রবাক</button>
-                    </div>
-                    <div class="quiz-result mt-3 text-sm font-bold hidden"></div>
+                <img src="logo.png" alt="AR Job Zone Logo" class="h-12 w-auto object-contain rounded-xl shadow-lg border border-slate-700">
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent block">AR Job Zone</span>
+                    <span class="text-[10px] text-indigo-400 tracking-wider font-semibold uppercase block -mt-1">Coaching Center</span>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
+
+    <div class="pt-28 pb-6 px-4 max-w-4xl mx-auto text-center">
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">
+            অনলাইন <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">স্মার্ট মডেল টেস্ট</span>
+        </h1>
+        <p class="text-slate-400 text-xs md:text-sm mt-2">প্রতিবার নতুন সিকুয়েন্স ও র্যান্ডম প্রশ্নের মাধ্যমে আত্মযাচাই করুন</p>
+    </div>
+
+    <main class="py-6 px-4 max-w-3xl mx-auto">
+        <div id="startCard" class="glass-card p-8 rounded-3xl text-center space-y-6">
+            <div class="w-16 h-16 bg-indigo-600/20 text-indigo-400 rounded-2xl flex items-center justify-center text-3xl mx-auto border border-indigo-500/30">
+                <i class="fa-solid fa-shuffle"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-100">স্পেশাল জব মডেল টেস্ট - সেট ০০১</h2>
+                <p class="text-slate-400 text-sm mt-1">বিষয়: বাংলা, ইংরেজি, গণিত ও সাধারণ জ্ঞান (জিক-জ্যাক মোড)</p>
+            </div>
+            <button onclick="startExam()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-8 py-3.5 rounded-xl transition shadow-lg shadow-indigo-600/30 inline-flex items-center gap-2">
+                <i class="fa-solid fa-play"></i> পরীক্ষা শুরু করুন
+            </button>
+        </div>
+
+        <div id="examBox" class="hidden space-y-6">
+            <div class="glass-card p-4 rounded-2xl flex justify-between items-center border border-indigo-500/30 sticky top-24 z-40 bg-slate-900/90 backdrop-blur">
+                <span class="text-xs md:text-sm font-semibold text-slate-300">
+                    <i class="fa-solid fa-clock text-indigo-400 mr-1.5"></i> সময় বাকি:
+                </span>
+                <span id="timer" class="text-lg md:text-xl font-mono font-bold text-emerald-400">05:00</span>
+            </div>
+
+            <form id="quizForm" class="space-y-6"></form>
+
+            <button type="button" onclick="submitExam()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-2xl transition shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 text-base">
+                <i class="fa-solid fa-paper-plane"></i> উত্তরপত্র জমা দিন
+            </button>
+        </div>
+
+        <div id="resultBox" class="hidden glass-card p-8 rounded-3xl text-center space-y-6 border border-emerald-500/30">
+            <div class="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-3xl flex items-center justify-center text-4xl mx-auto border border-emerald-500/30">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold text-slate-100">পরীক্ষার ফলাফল</h2>
+                <p id="scoreText" class="text-3xl font-extrabold text-indigo-400 mt-2">০ / ০</p>
+            </div>
+            <button onclick="location.reload()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-3 rounded-xl transition inline-flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-rotate-right"></i> পুনরায় পরীক্ষা দিন (নতুন র্যান্ডম সাজসজ্জায়)
+            </button>
+        </div>
+    </main>
 
     <script>
-        function checkAnswer(button, isCorrect) {
-            const parent = button.closest('.bg-slate-900\\/60');
-            const resultDiv = parent.querySelector('.quiz-result');
-            resultDiv.classList.remove('hidden');
-            if(isCorrect) {
-                resultDiv.className = "quiz-result mt-3 text-sm font-bold text-emerald-400";
-                resultDiv.innerText = "🎉 সঠিক উত্তর! (সিন্ধু-হিন্দোল)";
-                button.classList.add('bg-emerald-600', 'text-white');
-            } else {
-                resultDiv.className = "quiz-result mt-3 text-sm font-bold text-red-400";
-                resultDiv.innerText = "❌ ভুল উত্তর! সঠিক উত্তর: সিন্ধু-হিন্দোল";
-                button.classList.add('bg-red-600', 'text-white');
+        // MCQJob ভিত্তিক বিষয়ভিত্তিক প্রশ্ন ব্যাংক
+        const subjectQuestions = {
+            "বাংলা": [
+                { q: "'আমার ভাইয়ের রক্তে রাঙানো একুশে ফেব্রুয়ারি' গানটির রচিয়তা কে?", options: ["আব্দুল গাফফার চৌধুরী", "আলতাফ মাহমুদ", "কাজী নজরুল ইসলাম", "রবীন্দ্রনাথ ঠাকুর"], ans: 0 },
+                { q: "চর্যাপদ কোন ছন্দে লেখা?", options: ["মাত্রাবৃত্ত छंद", "অক্ষরবৃত্ত छंद", "স্বরবৃত্ত छंद", "স্বাচ্ছন্দ্য छंद"], ans: 0 }
+            ],
+                "ইংরেজি": [
+                { q: "What is the synonym of 'Abolish'?", options: ["Cancel", "Create", "Continue", "Perform"], ans: 0 },
+                { q: "Which one is the correct spelling?", options: ["Receive", "Receieve", "Recieve", "Receve"], ans: 0 }
+            ],
+            "গণিত": [
+                { q: "৩, ৬, ৯, ১২, ...... ধারাটির পরবর্তী পদ কোনটি?", options: ["১৫", "১৪", "১৬", "১৮"], ans: 0 },
+                { q: "টাকায় ৩টি করে আম কিনে ২টি করে বিক্রি করলে শতকরা কত লাভ হবে?", options: ["৫০%", "৩০%", "৪০%", "৬০%"], ans: 0 }
+            ],
+            "সাধারণ জ্ঞান": [
+                { q: "বাংলাদেশের একমাত্র প্রবাল দ্বীপ কোনটি?", options: ["সেন্টমার্টিন", "ভোলা", "সন্দ্বীপ", "হাতিয়া"], ans: 0 },
+                { q: "বঙ্গবন্ধু কত সালে ৬ দফা দাবি উত্থাপন করেন?", options: ["১৯৬৬", "১৯৫৪", "১৯৬৯", "১৯৭১"], ans: 0 }
+            ]
+        };
+
+        // অ্যারে এলোমেলো (Shuffle) করার ফাংশন
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
             }
+            return array;
+        }
+
+        let totalQuestionsCount = 0;
+        let generatedQuestions = [];
+        let timerInterval;
+        let timeLeft = 300; // ৫ মিনিট
+
+        function startExam() {
+            document.getElementById('startCard').classList.add('hidden');
+            document.getElementById('examBox').classList.remove('hidden');
+
+            const quizForm = document.getElementById('quizForm');
+            quizForm.innerHTML = '';
+
+            // ১. বিষয়গুলো এলোমেলো (Zig-Zag) করা
+            let subjects = Object.keys(subjectQuestions);
+            shuffle(subjects);
+
+            let questionIndex = 0;
+
+            subjects.forEach(subject => {
+                let questions = [...subjectQuestions[subject]];
+                shuffle(questions); // বিষয়টির ভেতরের প্রশ্ন এলোমেলো করা
+
+                // ক্যাটাগরি বা বিষয় হেডার
+                quizForm.innerHTML += `<div class="text-lg font-bold text-indigo-400 border-b border-slate-800 pb-2 mt-6 flex items-center gap-2"><i class="fa-solid fa-book"></i> বিষয়: ${subject}</div>`;
+
+                questions.forEach(item => {
+                    let opts = item.options.map((opt, i) => ({ text: opt, isCorrect: i === item.ans }));
+                    shuffle(opts); // অপশনগুলো এলোমেলো করা
+
+                    generatedQuestions.push({
+                        id: questionIndex,
+                        correctAnswerText: item.options[item.ans]
+                    });
+
+                    let optionsHtml = '';
+                    opts.forEach((opt) => {
+                        optionsHtml += `
+                            <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-indigo-500/50 cursor-pointer transition text-sm">
+                                <input type="radio" name="q_${questionIndex}" value="${opt.text}" class="accent-indigo-500">
+                                <span>${opt.text}</span>
+                            </label>
+                        `;
+                    });
+
+                    quizForm.innerHTML += `
+                        <div class="glass-card p-6 rounded-2xl space-y-4">
+                            <h3 class="font-bold text-slate-100 text-base">${questionIndex + 1}. ${item.q}</h3>
+                            <div class="space-y-2">${optionsHtml}</div>
+                        </div>
+                    `;
+                    questionIndex++;
+                });
+            });
+
+            totalQuestionsCount = questionIndex;
+
+            // টাইমার চালু
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                let m = Math.floor(timeLeft / 60);
+                let s = timeLeft % 60;
+                document.getElementById('timer').innerText = `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert("সময় শেষ!");
+                    submitExam();
+                }
+            }, 1000);
+        }
+
+        function submitExam() {
+            clearInterval(timerInterval);
+            let score = 0;
+            const form = document.getElementById('quizForm');
+
+            generatedQuestions.forEach(q => {
+                const selected = form[`q_${q.id}`]?.value;
+                if (selected && selected === q.correctAnswerText) {
+                    score++;
+                }
+            });
+
+            document.getElementById('examBox').classList.add('hidden');
+            document.getElementById('resultBox').classList.remove('hidden');
+            document.getElementById('scoreText').innerText = `${score} / ${totalQuestionsCount}`;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
