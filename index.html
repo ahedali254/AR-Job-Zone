@@ -36,6 +36,7 @@
                 </div>
             </div>
 
+            <!-- Desktop Menu Links -->
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                 <a href="index.html" class="text-indigo-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-house text-xs"></i> হোম</a>
                 <a href="courses.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
@@ -44,7 +45,28 @@
                 <a href="about.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-address-card text-xs"></i> আমাদের সম্পর্কে</a>
                 <a href="contact.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-headset text-xs"></i> যোগাযোগ</a>
             </div>
-            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+
+            <div class="hidden md:flex items-center">
+                <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                    <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-toggle" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg border border-slate-700 bg-slate-800">
+                <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Links Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-3 pb-5 space-y-3">
+            <a href="index.html" class="text-indigo-400 font-semibold flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-house text-xs"></i> হোম</a>
+            <a href="courses.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
+            <a href="exam.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-pen-to-square text-xs"></i> অনলাইন এক্সাম</a>
+            <a href="register.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-user-plus text-xs"></i> রেজিস্ট্রেশন</a>
+            <a href="about.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-address-card text-xs"></i> আমাদের সম্পর্কে</a>
+            <a href="contact.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-headset text-xs"></i> যোগাযোগ</a>
+            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 mt-2">
                 <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
             </a>
         </div>
@@ -176,7 +198,7 @@
                         <i class="fa-solid fa-robot"></i>
                     </div>
                     <div class="bg-slate-800/80 border border-slate-700/60 p-3 rounded-2xl rounded-tl-none max-w-[85%] leading-relaxed">
-                        আসসালামু আলাইকুম! 👋 আমি আপনার পড়াশোনায় সাহায্য করতে প্রস্তুত। আপনার যেকোনো প্রশ্ন নিচে লিখুন।
+                        আসসালামু আলাইকুম! 👋 আমি আপনার পড়াশোনায় সাহায্য করতে প্রস্তুত। আপনার যেকোনো প্রশ্ন নিচে লিখুন।
                     </div>
                 </div>
             </div>
@@ -196,6 +218,24 @@
     <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
         <p>© 2026 AR Job Zone. All Rights Reserved.</p>
     </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+    </script>
 
     <!-- Firebase System Script -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
@@ -286,7 +326,7 @@
             } else if (q.includes('গণিত') || q.includes('অঙ্ক') || q.includes('math')) {
                 return `<b>গণিত শেখার কৌশল:</b><br>প্রতিদিন অন্তত ১-২ ঘণ্টা শর্টকাট টেকনিক এবং বেসিক নিয়ম অনুশীলন করুন।`;
             } else if (q.includes('ইংরেজি') || q.includes('english')) {
-                return `<b>ইংরেজি প্রস্তুতি:</b><br>Parts of Speech, Tense, Voice Change এবং রাইট ফর্মস অব ভার্ব ভালোভাবে আয়ত্ত করুন।`;
+                return `<b>ইংরেজি প্রস্তুতি:</b><br>Parts of Speech, Tense, Voice Change এবং রাইট ফর্মস অব ভার্ব ভালোভাবে আয়ত্ত করুন।`;
             } else if (q.includes('ভর্তি') || q.includes('ফি') || q.includes('রেজিস্ট্রেশন')) {
                 return `<b>ভর্তি হতে:</b><br>আমাদের মেনুবার থেকে <b>রেজিস্ট্রেশন</b> পেজে গিয়ে ফরম পূরণ করুন অথবা কল করুন: <b>০১৭৩৭-৬৯০৬৪১</b>`;
             } else if (q.includes('ঠিকানা') || q.includes('কোথায়')) {
