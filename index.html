@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR Job Zone - আপনার বিশ্বস্ত জব প্রিপারেশন পার্টনার</title>
+    <title>AR Job Zone - আপনার স্বপ্নের ক্যারিয়ার গড়ার নির্ভরযোগ্য স্থান</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style> 
-        body { font-family: 'Hind Siliguri', sans-serif; } 
+        body { font-family: 'Hind Siliguri', sans-serif; }
         .glass-card {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+<body class="bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
 
     <!-- Header Navigation -->
     <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur fixed top-0 w-full z-50">
@@ -29,76 +29,146 @@
                 </div>
             </div>
 
-            <!-- Updated Nav Menu Items -->
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                 <a href="index.html" class="text-indigo-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-house text-xs"></i> হোম</a>
                 <a href="courses.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
                 <a href="exam.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-pen-to-square text-xs"></i> অনলাইন এক্সাম</a>
+                <a href="register.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-user-plus text-xs"></i> রেজিস্ট্রেশন</a>
                 <a href="about.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-address-card text-xs"></i> আমাদের সম্পর্কে</a>
             </div>
-
             <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
                 <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-4 max-w-6xl mx-auto text-center">
-        <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 inline-block mb-4">
-            🎓 বিসিএস, ব্যাংক, প্রাইমারি ও মন্ত্রণালয় জব প্রিপারেশন
-        </span>
-        <h1 class="text-3xl md:text-6xl font-extrabold text-slate-100 mb-6 leading-tight">
-            স্বপ্নের ক্যারিয়ার গড়ার পথে <br class="hidden md:block"/> 
-            <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-200 bg-clip-text text-transparent">আপনার নির্ভরযোগ্য বিশ্বস্ত সঙ্গী</span>
-        </h1>
-        <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            স্মার্ট ও মানসম্মত গাইডলাইন, নিয়মিত অনলাইন এক্সাম এবং বিষয়ভিত্তিক স্পেশাল মেটেরিয়ালস নিয়ে আমরা আছি আপনার সফলতার যাত্রায়।
-        </p>
+    <!-- Dynamic Ticker / Notice Bar -->
+    <div class="pt-20 bg-indigo-950/40 border-b border-indigo-900/40">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-3 text-xs md:text-sm">
+            <span class="bg-indigo-600 text-white font-bold px-3 py-1 rounded-full text-xs shrink-0 flex items-center gap-1">
+                <i class="fa-solid fa-bell animate-pulse"></i> নোটিশ:
+            </span>
+            <marquee id="dynamic-notice" class="text-slate-300 font-medium">
+                নতুন প্রাইমারি ও বিসিএস প্রিলি বিশেষ ব্যাচে ভর্তি চলছে! অতি জলদি রেজিস্ট্রেশন সম্পন্ন করুন।
+            </marquee>
+        </div>
+    </div>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="courses.html" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-8 py-3.5 rounded-xl transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
-                <i class="fa-solid fa-book-open"></i> কোর্সসমূহ দেখুন
-            </a>
-            <a href="exam.html" class="w-full sm:w-auto glass-card hover:bg-slate-800 text-slate-200 font-semibold px-8 py-3.5 rounded-xl transition flex items-center justify-center gap-2 border border-slate-700">
-                <i class="fa-solid fa-pen-to-square"></i> মডেল টেস্ট দিন
-            </a>
+    <!-- Modern Hero Banner Section -->
+    <section class="pt-10 pb-16 px-4 max-w-7xl mx-auto relative overflow-hidden">
+        <!-- Background Gradient Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-indigo-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl relative z-10 border border-slate-800">
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                
+                <div class="md:col-span-7 text-left space-y-6">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                        <i class="fa-solid fa-location-dot"></i> কলেজপাড়া, তারাগঞ্জ, রংপুর
+                    </span>
+                    
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                        চাকরির সেরা প্রস্তুতির জন্য একটি <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent">আস্থাভাজন নাম</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+                        বিসিএস, ব্যাংক, প্রাইমারি ও ৯ম-২০তম গ্রেডের প্রস্তুতির সেরা প্লাটফর্ম। নিয়মিত ক্লাসের পাশাপাশি বিষয়ভিত্তিক লাইভ এক্সাম দিয়ে নিজেকে যাচাই করুন।
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="register.html" class="bg-indigo-600 hover:bg-indigo-500 text-white px-7 py-3.5 rounded-xl font-semibold transition shadow-lg shadow-indigo-600/30 flex items-center gap-2">
+                            <i class="fa-solid fa-rocket"></i> ব্যাচে রেজিস্ট্রেশন করুন
+                        </a>
+                        <a href="exam.html" class="bg-slate-800 hover:bg-slate-700 text-slate-100 px-6 py-3.5 rounded-xl font-semibold transition flex items-center gap-2 border border-slate-700">
+                            <i class="fa-solid fa-pen-nib text-indigo-400"></i> ফ্রি এক্সাম দিন
+                        </a>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 text-xs md:text-sm text-slate-400 flex flex-wrap gap-y-2 gap-x-6">
+                        <span><i class="fa-solid fa-phone text-indigo-400 mr-1"></i> ০১৭৩৭-৬৯০৬৪১</span>
+                        <span><i class="fa-solid fa-phone text-indigo-400 mr-1"></i> ০১৫১৮-৮০৮০২৩</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative group w-full max-w-sm">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+                        <div class="relative bg-slate-900/90 p-8 rounded-3xl border border-slate-800 flex flex-col items-center text-center">
+                            <img src="logo.png" alt="AR Job Zone Logo" class="h-44 w-auto object-contain mb-4 drop-shadow-2xl">
+                            <h3 class="text-2xl font-bold text-slate-100">AR JOB ZONE</h3>
+                            <p class="text-xs text-indigo-400 mt-1 font-medium tracking-wide">প্রচেষ্টা ও সাফল্যের অঙ্গীকার</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="pb-20 px-4 max-w-6xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
-                <div class="w-12 h-12 bg-indigo-500/20 text-indigo-400 rounded-xl flex items-center justify-center text-2xl mb-4">
-                    <i class="fa-solid fa-chalkboard-user"></i>
+    <!-- Dynamic Features Section -->
+    <section class="py-12 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-100">আমাদের বিশেষ সেবাসমূহ</h2>
+            <p class="text-slate-400 text-sm mt-2">আপনার সঠিক প্রস্তুতির সকল সুবিধা এক জায়গায়</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="glass-card p-6 rounded-2xl hover:border-indigo-500/50 transition duration-300">
+                <div class="w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-xl flex items-center justify-center text-xl mb-4 border border-indigo-500/20">
+                    <i class="fa-solid fa-graduation-cap"></i>
                 </div>
-                <h3 class="text-xl font-bold text-slate-100 mb-2">অভিজ্ঞ মেন্টরশিপ</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">বাস্তব জব পরীক্ষার অভিজ্ঞতাসম্পন্ন সেরা মেন্টরের থেকে নিন নিয়মিত টেকনিক্যাল গাইডলাইন।</p>
+                <h3 class="text-lg font-bold text-slate-100 mb-2">বিশেষজ্ঞ গাইডলাইন</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">অভিজ্ঞ মেন্টরদের সুনির্দিষ্ট দিকনির্দেশনা এবং নিয়মিত স্পেশাল ডাউট ক্লিয়ারিং ক্লাস।</p>
             </div>
 
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
-                <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-2xl mb-4">
+            <!-- Feature 2 -->
+            <div class="glass-card p-6 rounded-2xl hover:border-indigo-500/50 transition duration-300">
+                <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4 border border-cyan-500/20">
                     <i class="fa-solid fa-laptop-code"></i>
                 </div>
-                <h3 class="text-xl font-bold text-slate-100 mb-2">অনলাইন কুইজ ও এক্সাম</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">নিজের প্রস্তুতি যাচাই করতে নিয়মিত লাইভ ওমআর (OMR) বেসড টেস্টে অংশ নিন।</p>
+                <h3 class="text-lg font-bold text-slate-100 mb-2">অনলাইন মক টেস্ট</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">বাস্তব পরীক্ষার অভিজ্ঞতা পেতে বিষয়ভিত্তিক ও পূর্ণাঙ্গ লাইভ মডেল টেস্ট ফিচার।</p>
             </div>
 
-            <div class="glass-card p-6 rounded-2xl border border-slate-800">
-                <div class="w-12 h-12 bg-cyan-500/20 text-cyan-400 rounded-xl flex items-center justify-center text-2xl mb-4">
+            <!-- Feature 3 -->
+            <div class="glass-card p-6 rounded-2xl hover:border-indigo-500/50 transition duration-300">
+                <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4 border border-emerald-500/20">
                     <i class="fa-solid fa-file-pdf"></i>
                 </div>
-                <h3 class="text-xl font-bold text-slate-100 mb-2">স্পেশাল শিট ও নোটস</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">টু-দ্য-পয়েন্ট সাজানো পিডিএফ শিট, বিগত বছরের প্রশ্ন ব্যাংক এবং শর্টকাট টেকনিক।</p>
+                <h3 class="text-lg font-bold text-slate-100 mb-2">স্মার্ট শিট ও নোটস</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">প্রতিটি বিষয়ের গুরুত্বপূর্ণ পয়েন্টভিত্তিক এক্সক্লুসিভ পিডিএফ লেকচার শিট।</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
-        <p>© 2026 AR Job Zone. All Rights Reserved. | 📍 কলেজপাড়া, তারাগঞ্জ, রংপুর</p>
+        <p>© 2026 AR Job Zone. All Rights Reserved.</p>
     </footer>
 
+    <!-- Firebase System Script -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCDJyF0nVDJ4y43as5U-ZESUyjRvH6x9hQ",
+            authDomain: "coaching-7211a.firebaseapp.com",
+            projectId: "coaching-7211a",
+            storageBucket: "coaching-7211a.firebasestorage.app",
+            messagingSenderId: "757734931061",
+            appId: "1:757734931061:web:103ad840148c643d25963c",
+            measurementId: "G-9SVRFWXZES"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Fetch dynamic notice from Firestore if available
+        db.collection('notices').doc('latest').get().then((doc) => {
+            if (doc.exists && doc.data().text) {
+                document.getElementById('dynamic-notice').innerText = doc.data().text;
+            }
+        }).catch(() => {});
+    </script>
 </body>
 </html>
