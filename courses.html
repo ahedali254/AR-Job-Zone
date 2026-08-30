@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <!-- Updated Nav Menu Items with About Page -->
+            <!-- Desktop Nav Menu Links -->
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                 <a href="index.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-house text-xs"></i> হোম</a>
                 <a href="courses.html" class="text-indigo-400 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
@@ -37,7 +37,25 @@
                 <a href="about.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-address-card text-xs"></i> আমাদের সম্পর্কে</a>
             </div>
 
-            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+            <div class="hidden md:flex items-center">
+                <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                    <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-toggle" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg border border-slate-700 bg-slate-800">
+                <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Links Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-3 pb-5 space-y-3">
+            <a href="index.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-house text-xs"></i> হোম</a>
+            <a href="courses.html" class="text-indigo-400 font-semibold flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
+            <a href="exam.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-pen-to-square text-xs"></i> অনলাইন এক্সাম</a>
+            <a href="about.html" class="hover:text-indigo-400 transition flex items-center gap-2 py-2 border-b border-slate-800/50"><i class="fa-solid fa-address-card text-xs"></i> আমাদের সম্পর্কে</a>
+            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 mt-2">
                 <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
             </a>
         </div>
@@ -65,17 +83,17 @@
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-semibold bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-full">BCS Special</span>
-                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-indigo-400 mr-1"></i> ৪ মাস মেয়াদী</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-indigo-400 mr-1"></i> ৪ মাস মেয়াদী</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-100 group-hover:text-indigo-400 transition mb-3">BCS Preliminary Course</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        সম্পূর্ণ বিসিএস প্রিলি সিলেবাস কভার করতে নিয়মিত লাইভ ও অফলাইন ক্লাস, লেকচার শিট ও মডেল টেস্ট।
+                        সম্পূর্ণ বিসিএস প্রিলি সিলেবাস কভার করতে নিয়মিত লাইভ ও অফলাইন ক্লাস, লেকচার শিট ও মডেল টেস্ট।
                     </p>
                     
                     <ul class="text-xs text-slate-300 space-y-2.5 mb-8 border-t border-slate-800 pt-4">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ১০০+ বিষয়ভিত্তিক লাইভ ক্লাস</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> বিষয়ভিত্তিক পিডিএফ লেকচার শিট</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> সাপ্তাহিক ও বিষয়ভিত্তিক এক্সাম</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ১০০+ বিষয়ভিত্তিক লাইভ ক্লাস</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> বিষয়ভিত্তিক পিডিএফ লেকচার শিট</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> সাপ্তাহিক ও বিষয়ভিত্তিক এক্সাম</li>
                     </ul>
                 </div>
                 
@@ -89,7 +107,7 @@
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full">Bank Job</span>
-                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-emerald-400 mr-1"></i> ৩ মাস মেয়াদী</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-emerald-400 mr-1"></i> ৩ মাস মেয়াদী</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-100 group-hover:text-emerald-400 transition mb-3">Bank Officer Master Course</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
@@ -97,7 +115,7 @@
                     </p>
                     
                     <ul class="text-xs text-slate-300 space-y-2.5 mb-8 border-t border-slate-800 pt-4">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ম্যাথ ও ইংলিশ শর্টকাট স্পেশাল কেয়ার</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ম্যাথ ও ইংলিশ শর্টকাট স্পেশাল কেয়ার</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> সাম্প্রতিক সাধারণ জ্ঞান আপডেট</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> রিয়েলটাইম ব্যাংক মডেল টেস্ট</li>
                     </ul>
@@ -113,11 +131,11 @@
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-semibold bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-3 py-1 rounded-full">Teacher Exam</span>
-                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-cyan-400 mr-1"></i> ২.৫ মাস মেয়াদী</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-cyan-400 mr-1"></i> ২.৫ মাস মেয়াদী</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-100 group-hover:text-cyan-400 transition mb-3">Primary & NTRCA Special</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        প্রাথমিক শিক্ষক নিয়োগ ও এনটিআরসিএ (নিবন্ধন) পরীক্ষার জন্য টু-দ্য-পয়েন্ট পূর্ণাঙ্গ প্রস্তুতি।
+                        প্রাথমিক শিক্ষক নিয়োগ ও এনটিআরসিএ (নিবন্ধন) পরীক্ষার জন্য টু-দ্য-পয়েন্ট পূর্ণাঙ্গ প্রস্তুতি।
                     </p>
 
                     <ul class="text-xs text-slate-300 space-y-2.5 mb-8 border-t border-slate-800 pt-4">
@@ -137,7 +155,7 @@
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full">DSS Exam</span>
-                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-amber-400 mr-1"></i> ২ মাস মেয়াদী</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-amber-400 mr-1"></i> ২ মাস মেয়াদী</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-100 group-hover:text-amber-400 transition mb-3">সমাজসেবা অধিদপ্তর (DSS)</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
@@ -161,7 +179,7 @@
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-semibold bg-purple-500/20 text-purple-400 border border-purple-500/30 px-3 py-1 rounded-full">Govt Jobs</span>
-                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-purple-400 mr-1"></i> ২.৫ মাস মেয়াদী</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-purple-400 mr-1"></i> ২.৫ মাস মেয়াদী</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-100 group-hover:text-purple-400 transition mb-3">মন্ত্রণালয় ও অধিদপ্তর (১৩-২০ গ্রেড)</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
@@ -185,7 +203,7 @@
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span class="text-xs font-semibold bg-rose-500/20 text-rose-400 border border-rose-500/30 px-3 py-1 rounded-full">Defense & Police</span>
-                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-rose-400 mr-1"></i> ২ মাস মেয়াদী</span>
+                        <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-rose-400 mr-1"></i> ২ মাস মেয়াদী</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-100 group-hover:text-rose-400 transition mb-3">পুলিশ সাব-ইন্সপেক্টর ও সার্জেন্ট</h3>
                     <p class="text-slate-400 text-sm leading-relaxed mb-6">
@@ -195,7 +213,7 @@
                     <ul class="text-xs text-slate-300 space-y-2.5 mb-8 border-t border-slate-800 pt-4">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> লিখিত পরীক্ষার রচনার বিশেষ টেকনিক</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> ট্রান্সলেশন ও গাণিতিক যুক্তি</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> নিয়মিত লিখিত মডেল টেস্ট</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> নিয়মিত লিখিত মডেল টেস্ট</li>
                     </ul>
                 </div>
 
@@ -211,6 +229,24 @@
     <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
         <p>© 2026 AR Job Zone. All Rights Reserved. | 📍 কলেজপাড়া, তারাগঞ্জ, রংপুর</p>
     </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+    </script>
 
 </body>
 </html>
