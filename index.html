@@ -106,6 +106,27 @@
 
         </div>
     </section>
+<!-- Firebase SDKs (CDN) -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
+<script>
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCDJyF0nVDJ4y43as5U-ZESUyjRvH6x9hQ",
+    authDomain: "coaching-7211a.firebaseapp.com",
+    projectId: "coaching-7211a",
+    storageBucket: "coaching-7211a.firebasestorage.app",
+    messagingSenderId: "757734931061",
+    appId: "1:757734931061:web:103ad840148c643d25963c",
+    measurementId: "G-9SVRFWXZES"
+  };
+
+  // Initialize Firebase & Firestore Database
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  
+  console.log("Firebase Database Successfully Connected!");
+</script>
 </body>
 </html>
