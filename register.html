@@ -6,62 +6,187 @@
     <title>অনলাইন রেজিস্ট্রেশন - AR Job Zone</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Hind Siliguri', sans-serif; } </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jsPDF & html2canvas for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style> 
+        body { font-family: 'Hind Siliguri', sans-serif; } 
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
 
     <!-- Header Navigation -->
     <nav class="border-b border-slate-800 bg-slate-900/90 backdrop-blur fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <img src="logo.png" alt="AR Job Zone Logo" class="h-12 w-auto object-contain rounded-lg">
-                <span class="text-xl font-bold bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">AR Job Zone</span>
+                <img src="logo.png" alt="AR Job Zone Logo" class="h-12 w-auto object-contain rounded-xl shadow-lg border border-slate-700">
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent block">AR Job Zone</span>
+                    <span class="text-[10px] text-indigo-400 tracking-wider font-semibold uppercase block -mt-1">Coaching Center</span>
+                </div>
             </div>
+
+            <!-- Nav Menu -->
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="index.html" class="hover:text-indigo-400 transition">হোম</a>
-                <a href="courses.html" class="hover:text-indigo-400 transition">কোর্সসমূহ</a>
-                <a href="exam.html" class="hover:text-indigo-400 transition">অনলাইন এক্সাম</a>
-                <a href="register.html" class="text-indigo-400 font-semibold">রেজিস্ট্রেশন</a>
+                <a href="index.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-house text-xs"></i> হোম</a>
+                <a href="courses.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-book-open text-xs"></i> কোর্সসমূহ</a>
+                <a href="exam.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-pen-to-square text-xs"></i> অনলাইন এক্সাম</a>
+                <a href="about.html" class="hover:text-indigo-400 transition flex items-center gap-1.5"><i class="fa-solid fa-address-card text-xs"></i> আমাদের সম্পর্কে</a>
             </div>
-            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition">
-                ফেসবুক গ্রুপ
+
+            <a href="https://www.facebook.com/groups/566073545487101/about" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shadow-lg shadow-blue-600/30 flex items-center gap-2">
+                <i class="fa-brands fa-facebook-f"></i> ফেসবুক গ্রুপ
             </a>
         </div>
     </nav>
 
     <!-- Registration Section -->
-    <section class="pt-32 pb-16 px-4 max-w-2xl mx-auto w-full">
-        <div class="bg-slate-800/80 border border-slate-700 p-8 rounded-3xl shadow-2xl">
-            <h2 class="text-3xl font-bold text-center text-indigo-400 mb-2">🎓 নতুন ব্যাচে ভর্তি ফর্ম</h2>
-            <p class="text-slate-400 text-center text-sm mb-8">সঠিক তথ্য দিয়ে নিচের ফর্মটি পূরণ করুন।</p>
+    <section class="pt-32 pb-16 px-4 max-w-3xl mx-auto w-full">
+        <div class="glass-card p-6 md:p-10 rounded-3xl shadow-2xl border border-indigo-500/20">
+            <div class="text-center mb-8">
+                <span class="px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 inline-block mb-3">
+                    📝 অনলাইন ভর্তি সেশন - ২০২৬
+                </span>
+                <h2 class="text-3xl font-extrabold text-slate-100">নতুন ব্যাচে ভর্তি ফর্ম</h2>
+                <p class="text-slate-400 text-xs md:text-sm mt-2">সঠিক তথ্য দিয়ে নিচের ফর্মটি পূরণ করুন ও ভর্তি রসিদ (PDF) ডাউনলোড করুন।</p>
+            </div>
 
-            <form id="student-form" class="space-y-5">
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2">আপনার পুরো নাম</label>
-                    <input type="text" id="name" required placeholder="উদাহরণ: মো: আরিফুল ইসলাম" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500">
+            <form id="student-form" class="space-y-6">
+                
+                <!-- Personal Info -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">আপনার পুরো নাম *</label>
+                        <input type="text" id="name" required placeholder="উদাহরণ: মো: আরিফুল ইসলাম" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">মোবাইল নম্বর *</label>
+                        <input type="tel" id="phone" required placeholder="017xxxxxxxx" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2">মোবাইল নম্বর</label>
-                    <input type="tel" id="phone" required placeholder="017xxxxxxxx" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500">
+
+                <!-- Course & Photo -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">কাঙ্ক্ষিত কোর্স সিলেক্ট করুন *</label>
+                        <select id="course" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
+                            <option value="BCS Preliminary Course">BCS Preliminary Course</option>
+                            <option value="Bank Officer Master Course">Bank Officer Master Course</option>
+                            <option value="Primary & NTRCA Special">Primary & NTRCA Special</option>
+                            <option value="Samaj Seba Adhidoptor (DSS)">সমাজসেবা অধিদপ্তর (DSS)</option>
+                            <option value="9th-20th Grade Ministry Batch">মন্ত্রণালয় ও অধিদপ্তর (৯ম-২০তম)</option>
+                            <option value="Police SI & Sergeant Batch">পুলিশ সাব-ইন্সপেক্টর ও সার্জেন্ট</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">পাসপোর্ট সাইজ ছবি (অটো কম্প্রেস হবে)</label>
+                        <input type="file" id="photo" accept="image/*" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-indigo-600 file:text-white hover:file:bg-indigo-500">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-slate-300 mb-2">কাঙ্ক্ষিত কোর্স সিলেক্ট করুন</label>
-                    <select id="course" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-indigo-500">
-                        <option value="BCS Preliminary">BCS Preliminary Course</option>
-                        <option value="Bank Job Master">Bank Job Master Course</option>
-                        <option value="Primary Teacher Exam">Primary Teacher Exam Prep</option>
-                        <option value="9th-20th Grade Special">9th-20th Grade Special Batch</option>
-                    </select>
+
+                <!-- Payment Instructions -->
+                <div class="bg-slate-900/80 p-5 rounded-2xl border border-indigo-500/30 space-y-3">
+                    <h3 class="text-sm font-bold text-indigo-400 flex items-center gap-2">
+                        <i class="fa-solid fa-wallet"></i> ফি প্রদান পদ্ধতি (bKash / Nagad / Rocket)
+                    </h3>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        নিচের যেকোনো নম্বরে নির্ধারিত কোর্স ফি <strong>"Send Money"</strong> করে TrxID ও পেমেন্ট নম্বরটি বক্সে দিন।
+                    </p>
+                    <div class="grid grid-cols-3 gap-2 text-center text-xs font-semibold pt-1">
+                        <div class="bg-pink-950/60 border border-pink-700/50 p-2 rounded-xl text-pink-300">
+                            <span class="block text-[10px] text-pink-400 uppercase">bKash (Personal)</span> 01700000000
+                        </div>
+                        <div class="bg-orange-950/60 border border-orange-700/50 p-2 rounded-xl text-orange-300">
+                            <span class="block text-[10px] text-orange-400 uppercase">Nagad (Personal)</span> 01700000000
+                        </div>
+                        <div class="bg-purple-950/60 border border-purple-700/50 p-2 rounded-xl text-purple-300">
+                            <span class="block text-[10px] text-purple-400 uppercase">Rocket (Personal)</span> 01700000000
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" id="submit-btn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3.5 rounded-xl transition shadow-lg shadow-indigo-600/30">
-                    ভর্তি ফর্ম সাবমিট করুন
+
+                <!-- Payment Details Input -->
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">পেমেন্ট মেথড *</label>
+                        <select id="payMethod" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
+                            <option value="bKash">bKash (বিকাশ)</option>
+                            <option value="Nagad">Nagad (নগদ)</option>
+                            <option value="Rocket">Rocket (রকেট)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">যে নম্বর থেকে টাকা পাঠিয়েছেন *</label>
+                        <input type="tel" id="payNumber" required placeholder="017xxxxxxxx" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-slate-300 mb-2">Transaction ID (TrxID) *</label>
+                        <input type="text" id="trxId" required placeholder="9J87X1K2LM" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:border-indigo-500 uppercase">
+                    </div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl transition shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> ভর্তি ফর্ম সাবমিট ও স্লিপ ডাউনলোড করুন
                 </button>
             </form>
+
             <div id="form-status" class="mt-4 text-center text-sm font-medium"></div>
         </div>
     </section>
 
-    <!-- Firebase Script -->
+    <!-- Hidden Printable Slip Container -->
+    <div id="pdf-slip-wrapper" class="hidden">
+        <div id="pdf-slip" style="width: 550px; padding: 30px; background: #ffffff; color: #0f172a; font-family: 'Hind Siliguri', sans-serif; border: 2px solid #6366f1; border-radius: 12px; margin: 0 auto;">
+            <div style="text-align: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px; margin-bottom: 20px;">
+                <h2 style="color: #4338ca; font-size: 26px; font-weight: 800; margin: 0;">AR Job Zone Coaching Center</h2>
+                <p style="font-size: 12px; color: #64748b; margin: 3px 0 0 0;">কলেজপাড়া, তারাগঞ্জ, রংপুর | মোবাইল: 01700000000</p>
+                <span style="display: inline-block; background: #e0e7ff; color: #3730a3; font-size: 11px; font-weight: 700; padding: 3px 12px; rounded: 20px; margin-top: 8px;">ভর্তি স্লিপ ও আইডি নম্বর</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <div style="font-size: 13px; line-height: 1.8;">
+                    <p style="margin: 0;"><strong>স্টুডেন্ট আইডি (রোল):</strong> <span id="slip-id" style="color: #4338ca; font-weight: bold;"></span></p>
+                    <p style="margin: 0;"><strong>শিক্ষার্থীর নাম:</strong> <span id="slip-name"></span></p>
+                    <p style="margin: 0;"><strong>মোবাইল নম্বর:</strong> <span id="slip-phone"></span></p>
+                    <p style="margin: 0;"><strong>কোর্স:</strong> <span id="slip-course" style="font-weight: bold; color: #0284c7;"></span></p>
+                </div>
+                <div style="width: 90px; height: 110px; border: 1px dashed #cbd5e1; border-radius: 8px; overflow: hidden; background: #f8fafc; display: flex; align-items: center; justify-content: center;">
+                    <img id="slip-img" src="" alt="Student Photo" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                    <span id="slip-img-placeholder" style="font-size: 10px; color: #94a3b8; text-align: center;">ছবি নেই</span>
+                </div>
+            </div>
+
+            <div style="background: #f1f5f9; padding: 12px; border-radius: 8px; font-size: 12px; margin-bottom: 20px;">
+                <p style="margin: 0 0 4px 0;"><strong>পেমেন্ট মেথড:</strong> <span id="slip-method"></span></p>
+                <p style="margin: 0 0 4px 0;"><strong>পেমেন্ট নম্বর:</strong> <span id="slip-paynum"></span></p>
+                <p style="margin: 0;"><strong>Transaction ID:</strong> <span id="slip-trx" style="font-family: monospace; font-weight: bold; color: #166534;"></span></p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 11px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 12px;">
+                <div>
+                    <p style="margin: 0;">তারিখ: <span id="slip-date"></span></p>
+                    <p style="margin: 0; color: #166534; font-weight: bold;">স্ট্যাটাস: পেন্ডিং (যাচাই সাপেক্ষে)</p>
+                </div>
+                <div style="text-align: center;">
+                    <p style="margin: 0; font-weight: bold; color: #334155;">পরিচালক স্বাক্ষর</p>
+                    <div style="width: 100px; border-bottom: 1px dashed #94a3b8; margin-top: 25px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
+        <p>© 2026 AR Job Zone. All Rights Reserved. | 📍 কলেজপাড়া, তারাগঞ্জ, রংপুর</p>
+    </footer>
+
+    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
     <script>
@@ -77,29 +202,112 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
+        // Image Compress Function (Client Side)
+        function compressImage(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        const MAX_WIDTH = 300;
+                        const scaleFactor = MAX_WIDTH / img.width;
+                        canvas.width = MAX_WIDTH;
+                        canvas.height = img.height * scaleFactor;
+                        
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        resolve(canvas.toDataURL('image/jpeg', 0.7)); // Compressed JPEG
+                    };
+                };
+            });
+        }
+
         document.getElementById('student-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const submitBtn = document.getElementById('submit-btn');
             const formStatus = document.getElementById('form-status');
+            
             submitBtn.disabled = true;
-            submitBtn.innerText = 'জমা হচ্ছে...';
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> তথ্য জমা ও স্লিপ প্রসেসিং হচ্ছে...`;
 
             try {
-                await db.collection('students').add({
+                // Generate Auto Roll / Student ID
+                const randomNum = Math.floor(1000 + Math.random() * 9000);
+                const rollNo = `AR-2026-${randomNum}`;
+
+                // Process Photo Compression if uploaded
+                let photoData = null;
+                const photoFile = document.getElementById('photo').files[0];
+                if (photoFile) {
+                    photoData = await compressImage(photoFile);
+                }
+
+                const studentData = {
+                    rollNo: rollNo,
                     name: document.getElementById('name').value,
                     phone: document.getElementById('phone').value,
                     course: document.getElementById('course').value,
+                    photo: photoData,
+                    payMethod: document.getElementById('payMethod').value,
+                    payNumber: document.getElementById('payNumber').value,
+                    trxId: document.getElementById('trxId').value,
+                    status: 'Pending',
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                });
+                };
+
+                // Save to Firestore
+                await db.collection('students').add(studentData);
+
+                // Populate PDF Slip
+                document.getElementById('slip-id').innerText = rollNo;
+                document.getElementById('slip-name').innerText = studentData.name;
+                document.getElementById('slip-phone').innerText = studentData.phone;
+                document.getElementById('slip-course').innerText = studentData.course;
+                document.getElementById('slip-method').innerText = studentData.payMethod;
+                document.getElementById('slip-paynum').innerText = studentData.payNumber;
+                document.getElementById('slip-trx').innerText = studentData.trxId;
+                document.getElementById('slip-date').innerText = new Date().toLocaleDateString('bn-BD');
+
+                if (photoData) {
+                    const slipImg = document.getElementById('slip-img');
+                    slipImg.src = photoData;
+                    slipImg.style.display = 'block';
+                    document.getElementById('slip-img-placeholder').style.display = 'none';
+                }
+
+                // Generate PDF Download
+                const slipElement = document.getElementById('pdf-slip');
+                const wrapper = document.getElementById('pdf-slip-wrapper');
+                wrapper.classList.remove('hidden');
+
+                const canvas = await html2canvas(slipElement, { scale: 2 });
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a5');
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 10, pdfWidth, pdfHeight);
+                pdf.save(`AR_Job_Zone_${rollNo}.pdf`);
+                
+                wrapper.classList.add('hidden');
+
                 formStatus.className = "mt-4 text-center text-sm font-medium text-emerald-400";
-                formStatus.innerText = "✅ ধন্যবাদ! আপনার ভর্তি আবেদন সফলভাবে ফায়ারবেসে জমা হয়েছে।";
+                formStatus.innerHTML = `✅ অভিনন্দন ${studentData.name}! আপনার ভর্তি ফর্মটি সফলভাবে জমা হয়েছে। <br>🆔 আপনার অটো রোল নম্বর: <strong>${rollNo}</strong> (স্লিপ ডাউনলোড করা হয়েছে)`;
+                
                 document.getElementById('student-form').reset();
+
             } catch (error) {
+                console.error(error);
                 formStatus.className = "mt-4 text-center text-sm font-medium text-red-400";
-                formStatus.innerText = "❌ কোনো সমস্যা হয়েছে, আবার চেষ্টা করুন।";
+                formStatus.innerText = "❌ কোনো সমস্যা হয়েছে, দয়া করে আবার চেষ্টা করুন।";
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'ভর্তি ফর্ম সাবমিট করুন';
+                submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> ভর্তি ফর্ম সাবমিট ও স্লিপ ডাউনলোড করুন`;
             }
         });
     </script>
